@@ -4,10 +4,13 @@ services:
     env: docker
     plan: free
     autoDeploy: true
+    startCommand: "pnpm --filter ./apps/backend run start"
+    buildCommand: "pnpm install && pnpm run build"
     ports:
       - port: 4200
         protocol: http
-    startCommand: "pnpm run pm2"
     envVars:
       - key: APP_KEY
         value: base64:XdyE29arq5q0SPgRBZW2Eiiz99iedprKYEhVkxpGQh8=
+      - key: FRONTEND_URL
+        value: https://postiz-bhhs.onrender.com
