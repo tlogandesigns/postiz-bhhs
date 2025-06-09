@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: postiz
+    env: docker
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: APP_KEY
+        value: base64:XdyE29arq5q0SPgRBZW2Eiiz99iedprKYEhVkxpGQh8=
+    ports:
+      - port: 3000
+        protocol: http
